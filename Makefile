@@ -11,14 +11,16 @@ build_release:
 	go build -o ./bin/ ./cmd/test
 
 install:
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
-
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+	go install github.com/braswelljr/rmx@latest
+	
 update:
 	go mod tidy
-	go get -u
+	go get -u ./...
+	# go get -u all
 	
 clean:
-	rm -rf bin/*
+	rmx -rf bin/*
 	go clean -testcache 
 	
 fmt:
