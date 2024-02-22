@@ -1,1 +1,1 @@
-# go program language develop template
+# A Go program language develop template.
