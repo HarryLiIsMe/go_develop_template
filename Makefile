@@ -5,10 +5,10 @@ rebuild: clean build
 rebuild_release: clean build_release
 
 build: 
-	go build -tags "debug" -o ./bin/ ./cmd/test
+	go build -tags "debug" -o ./bin/ ./cmd/go_develop_template
 
 build_release: 
-	go build -o ./bin/ ./cmd/test
+	go build -o ./bin/ ./cmd/go_develop_template
 
 install:
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
@@ -20,14 +20,14 @@ update:
 	# go get -u all
 	
 clean:
-	rmx -rf bin/*
+	rmx bin/*
 	go clean -testcache 
 	
 fmt:
-	go fmt ./...
+	go fmt ./... 
 
 lint:
-	golangci-lint run -v ./...
+	golangci-lint run -c .golangci.json -v ./...
 
 test:
-	go test -v ./...
+	go test -v ./tests/...
