@@ -10,3 +10,7 @@ import (
 func TestCase1(t *testing.T) {
 	assert.True(t, true, "test case1 failed!!!")
 }
+
+func TestCase2(t *testing.T) {
+	assert.True(t, false, "test case2 failed!!!")
+}
