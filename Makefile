@@ -18,12 +18,12 @@ build_bins_release:
 	go build -o ./output/bins/ ./cmd/go_develop_template
 
 build_libs:
-	go build -tags "debug" -buildmode=c-shared -o ./output/libs/libdy1.so libs/lib1.go
-	go build -tags "debug" -buildmode=c-archive -o ./output/libs/libst1.a libs/lib1.go
+	go build -tags "debug" -buildmode=c-shared -o ./output/libs/libdy1.so libs/lib1.go libs/lib2.go
+	go build -tags "debug" -buildmode=c-archive -o ./output/libs/libst1.a libs/lib1.go libs/lib2.go
 
 build_libs_release:
-	go build -buildmode=c-shared -o ./output/libs/libdy1.so libs/lib1.go
-	go build -buildmode=c-archive -o ./output/libs/libst1.a libs/lib1.go
+	go build -buildmode=c-shared -o ./output/libs/libdy1.so libs/lib1.go libs/lib2.go
+	go build -buildmode=c-archive -o ./output/libs/libst1.a libs/lib1.go libs/lib2.go
 
 install:
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
