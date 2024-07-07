@@ -26,10 +26,10 @@ build_libs_release:
 	go build -buildmode=c-archive -o ./output/libs/libst1.a libs/lib1.go libs/lib2.go
 
 install:
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-	go install github.com/braswelljr/rmx@latest
 	go mod tidy
 	go get ./...
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+	go install github.com/braswelljr/rmx@latest
 
 update:
 	go mod tidy
