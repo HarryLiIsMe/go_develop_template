@@ -28,6 +28,8 @@ build_libs_release:
 install:
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 	go install github.com/braswelljr/rmx@latest
+	go mod tidy
+	go get ./...
 
 update:
 	go mod tidy
