@@ -1,4 +1,4 @@
-module github.com/harryliisme/go-develop-template
+module github.com/harryliisme/go_develop_template
 
 go 1.22
 
