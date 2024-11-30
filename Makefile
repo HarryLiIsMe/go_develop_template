@@ -39,6 +39,9 @@ update:
 	go get -u ./...
 	# go get -u all
 
+run:
+	go run cmd/go_develop_template/main.go
+
 clean:
 	- $(RM) output
 	go clean -testcache
@@ -62,3 +65,6 @@ lint:
 test:
 	go test -v ./tests/...
 
+bench:
+
+coverage:
