@@ -8,7 +8,10 @@ import (
 )
 
 func main() {
-	projectName := os.Getenv("PROJECT_NAME")
-
-	fmt.Println("hello world", projectName)
+	projectName, ok := os.LookupEnv("PROJECT_NAME")
+    if ok {
+	    fmt.Println("hello world", projectName)
+    } else {
+        panic("env load failed!!!")
+    }
 }
