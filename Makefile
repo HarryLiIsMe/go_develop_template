@@ -1,27 +1,27 @@
 RM=rmx
 
-all: rebuild_bins rebuild_libs_release
+all: rebuild_bins rebuild_libs
 
 rebuild_bins: clean build_bins
 
-rebuild_bins_release: clean build_bins_release
+rebuild_bins_rel: clean build_bins_rel
 
 rebuild_libs: clean build_libs
 
-rebuild_libs_release: clean build_libs_release
+rebuild_libs_rel: clean build_libs_rel
 
 
 build_bins:
 	go build -tags "debug" -o ./output/bins/ ./cmd/go_develop_template
 
-build_bins_release:
+build_bins_rel:
 	go build -o ./output/bins/ ./cmd/go_develop_template
 
 build_libs:
 	go build -tags "debug" -buildmode=c-shared -o ./output/libs/libdy1.so libs/lib1.go libs/lib2.go
 	go build -tags "debug" -buildmode=c-archive -o ./output/libs/libst1.a libs/lib1.go libs/lib2.go
 
-build_libs_release:
+build_libs_rel:
 	go build -buildmode=c-shared -o ./output/libs/libdy1.so libs/lib1.go libs/lib2.go
 	go build -buildmode=c-archive -o ./output/libs/libst1.a libs/lib1.go libs/lib2.go
 
